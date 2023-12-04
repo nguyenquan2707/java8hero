@@ -15,7 +15,15 @@ class AddableImpl implements Addable {
 public class LambdaParameter {
 
     public static void main(String[] args) {
+//        Addable addResult = (a, b) -> a + b;
+//
+//        int add = addResult.add(1, 2);
+//        System.out.println(add);
 
+        Addable addResult = (a, b) -> {
+            int c = a + b;
+            return c;
+        };
 
     }
 
