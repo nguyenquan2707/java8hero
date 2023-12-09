@@ -1,6 +1,5 @@
 package quan.buildFunctionalInterface;
 
-import quan.MyFunctionInterface;
 
 import java.util.function.Consumer;
 
