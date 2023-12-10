@@ -31,5 +31,11 @@ public class MethodReferenceDemo {
 
         Printable printableMethodReference = System.out::println;
         printableMethodReference.print("Quan from method reference.");
+
+        //3.
+        Function<String, String> stringFunction = (message) -> message.toLowerCase();
+        System.out.println(stringFunction.apply("Quan"));
+        Function<String, String> stringFunctionRef = String::toLowerCase;
+        System.out.println(stringFunctionRef.apply("Quan"));
     }
 }
