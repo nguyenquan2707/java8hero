@@ -25,6 +25,8 @@ public class LambdaParameter {
             return c;
         };
 
+        System.out.println(addResult.add(1, 2));
+
     }
 
 }
