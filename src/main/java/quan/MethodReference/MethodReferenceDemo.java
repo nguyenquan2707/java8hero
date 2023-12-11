@@ -1,5 +1,6 @@
 package quan.MethodReference;
 
+import java.util.*;
 import java.util.function.Function;
 
 @FunctionalInterface
@@ -37,5 +38,44 @@ public class MethodReferenceDemo {
         System.out.println(stringFunction.apply("Quan"));
         Function<String, String> stringFunctionRef = String::toLowerCase;
         System.out.println(stringFunctionRef.apply("Quan"));
+
+//        4.
+
+        String[] strArray = {"A", "B", "Z", "D", "N", "C"};
+
+        Arrays.sort(strArray, (o1, o2) -> o1.compareToIgnoreCase(o2));
+
+        print(strArray);
+
+        String[] strArray2 = {"A", "B", "Z", "D", "N", "C"};
+        Arrays.sort(strArray2, String::compareToIgnoreCase);
+        print(strArray2);
+
+        /**
+         * Constructor
+         */
+        List<String> fruits = new ArrayList<>();
+        fruits.add("Banana");
+        fruits.add("Lemon");
+        fruits.add("Apple");
+
+        Function<List<String>, Set<String>> convert = (first) -> new HashSet<>(first);
+        printSet(convert.apply(fruits));
+
+        //new
+        Function<List<String>, Set<String>> convert2 = HashSet::new;
+        printSet(convert2.apply(fruits));
+
+    }
+
+    private static void printSet(Set<String> input) {
+        System.out.println("---------------");
+        input.stream().forEach(element -> {
+            System.out.println(element + " ");
+        });
+    }
+
+    private static void print(String[] array) {
+        Arrays.asList(array).forEach(System.out::println);
     }
 }
