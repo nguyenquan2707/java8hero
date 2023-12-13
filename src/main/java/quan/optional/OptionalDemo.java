@@ -20,5 +20,16 @@ public class OptionalDemo {
         //Not sure that object is null or not, then using ofNullable
         Optional<Object> optionalO = Optional.ofNullable(email);
         System.out.println(optionalO);
+
+        //get
+        optionalO.get();
+
+        if(optionalO.isPresent()) {
+            System.out.println("Not null + " + optionalO.get());
+        }
+
+        if(optionalO.isEmpty()) {
+
+        }
     }
 }
