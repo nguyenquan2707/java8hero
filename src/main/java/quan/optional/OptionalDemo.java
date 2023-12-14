@@ -28,8 +28,17 @@ public class OptionalDemo {
             System.out.println("Not null + " + optionalO.get());
         }
 
-        if(optionalO.isEmpty()) {
-
+        if(empty.isEmpty()) {
+            System.out.println("Is Empty");
         }
+
+        //orElse
+        Optional<String> optional2 = Optional.ofNullable(null);
+        System.out.println(optional2.orElse("default@gmail.com"));
+
+        //oeElseGet
+        Optional<Object> optional3 = Optional.ofNullable(null);
+        optional3.orElseGet(() -> "default@gmail.com");
+        System.out.println(optional3.orElseGet(() -> "default@gmail.com"));
     }
 }
