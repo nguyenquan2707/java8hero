@@ -70,5 +70,12 @@ public class OptionalDemo {
         Optional<String> optional9 = Optional.ofNullable(name);
         optional9.filter(data -> data.equals("myName"))
                 .ifPresent((finalResult) -> System.out.println("filter = " + finalResult));
+
+        //map
+        Optional<String> optional10 = Optional.of("myName");
+        optional10.filter(data -> data.equals("myName"))
+                .map((sourceData) -> sourceData.length())
+                .ifPresent((targetData) -> System.out.println(targetData));
+
     }
 }
