@@ -8,6 +8,10 @@ interface Vehicle {
     default String turnAlarmOn() {
         return "speed down...";
     }
+
+    static String getCompany() {
+        return "BMW";
+    }
 }
 
 class VehicleImpl implements Vehicle {
@@ -31,5 +35,8 @@ public class DefaultDemo {
 
         System.out.println(new VehicleImpl().getBrand());
         System.out.println(new VehicleImpl().speedUp());
+
+        //call static
+        System.out.println("Company = " + Vehicle.getCompany());
     }
 }
