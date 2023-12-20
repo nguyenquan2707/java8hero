@@ -44,7 +44,7 @@ public class StreamSorting {
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
 
-        System.out.println("------");
+        System.out.println("------sort name----");
         getProducts().stream()
                 .sorted((Comparator.comparing(Product::getName).reversed()))
                 .collect(Collectors.toList())
