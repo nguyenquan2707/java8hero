@@ -1,7 +1,7 @@
 package quan.stream;
 
 public class ProductDto {
-    public ProductDto(int id, String name, float price) {
+    public ProductDto(String name, float price) {
         this.name = name;
         this.price = price;
     }
