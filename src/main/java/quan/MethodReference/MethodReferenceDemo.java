@@ -65,6 +65,8 @@ public class MethodReferenceDemo {
         //new
         Function<List<String>, Set<String>> convert2 = HashSet::new;
         printSet(convert2.apply(fruits));
+        boolean isSet = convert2.apply(fruits) instanceof HashSet<String>;
+        System.out.println("isSet = " + isSet);
 
     }
 
